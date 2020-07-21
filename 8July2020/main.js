@@ -12,10 +12,10 @@ const printSpiral = (matrix) => {
     const n = matrixCopy[0].length;
     const m = matrixCopy.length;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < (m - 2); i++) {
 
-        let topRow = matrixCopy.splice(0,1);
-
+        let topRow = (matrixCopy.splice(0,1))[0];
+        
         topRow.forEach(item => {
             console.log(item)
         });
@@ -34,7 +34,7 @@ const printSpiral = (matrix) => {
         let leftNumbers = [];
 
         matrixCopy.forEach(item => {
-            leftNumbers.push(item.splice(0,1))
+            leftNumbers.push(item.splice(0,1)[0])
         });
 
         let leftNumbersReversed = leftNumbers.reverse();
@@ -44,3 +44,5 @@ const printSpiral = (matrix) => {
         })
       }
 }
+
+printSpiral(theMatrix);
